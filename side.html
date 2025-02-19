@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Table Of Contents Demo</title>
+        <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 25vw 50vw 25vw;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "hd hd hd"
+                "pd ct mn"
+                "ft ft ft";
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body > header {
+            grid-area: hd;
+            box-shadow: 0px 1px 5px lightgray;
+        }
+
+        body > header > h1 {
+            padding: 15pt 5pt;
+            margin: 0pt;
+            text-align: center;
+        }
+
+        body > footer {
+            grid-area: ft;
+            text-align: right;
+            color: gray;
+            padding: 10pt;
+            box-shadow: 0px -1px 5px lightgray;
+        }
+
+        body > main {
+            grid-row: hd-end / ft-start;
+            grid-column: ct-start / mn-end;
+            overflow: auto;
+            padding-right: 25vw; /* grid-template-columnsで指定した３列目の幅(25vw)と合せる。*/
+        }
+
+        body > menu {
+            grid-row: hd-end / ft-start;
+            grid-column: mn-start / mn-end;
+            z-index: +1;
+            margin-left: 20pt;
+            padding-inline-start: 0px;
+            padding: 10pt;
+            border: solid 1px gray;
+
+            /* メニューの外側の余白部分でマウスホイール操作をしたときにmainがスクロールするようにmenuの幅と高さをメニューの内容に合せる。 */
+            width: fit-content;
+            height: fit-content;
+        }
+
+        #toc-menu > ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        #toc-menu > ul > li {
+            border-left: 5pt solid transparent;
+            padding: 2pt 5pt;
+            margin: 0px;
+        }
+
+        #toc-menu > ul > li:hover {
+            color: red;
+        }
+        #toc-menu > ul > li:active {
+            color: darkgray;
+        }
+
+        #toc-menu > ul > li.active {
+            border-left: 5pt solid black;
+        }
+        #toc-menu > ul > li.active:hover {
+            border-left: 5pt solid black;
+        }
+        #toc-menu > ul > li.active:active {
+            color: darkgray;
+        }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Table Of Contents Demo</h1>
+        </header>
+        <menu>
+            <nav id="toc-menu"><ul></ul></nav>
+        </menu>
+        <main>
+            <section>
+                <h2>Section 1</h2>
+                <p>Lorem ipsum dolor sit amet, tale alia ut vix. Vis cu modo illud accusam, rebum salutandi ex per. Offendit eloquentiam in pro, causae theophrastus comprehensam no sit, ne his dicant eleifend. Mei cu velit torquatos, ius ex affert primis inermis, nec et tempor eripuit legimus. Duo luptatum pertinax te, ex erat definitiones sit. Magna dolores nec ea, libris iriure ne eam.</p>
+            </section>
+
+            <section>
+                <h2>Section 2</h2>
+                <p>Ne doming interpretaris eos, et dico mundi accumsan sed. Nonumy iriure vis id, id est ullum eligendi. Tollit gubergren te mea, definiebas temporibus mei at, recusabo volutpat salutandi ea sea. Quando salutatus ne duo, doming nominati consectetuer pri at.</p>
+            </section>
+
+            <section>
+                <h2>Section 3</h2>
+                <p>Eu has habeo error temporibus, sit ex everti cotidieque signiferumque. Decore utinam id eam, pri detracto appellantur ne. Ei ius nullam ceteros democritum, impetus forensibus signiferumque ne vix. Quo quod comprehensam ei, ex etiam homero bonorum cum, idque prompta mentitum ex has.</p>
+            </section>
+
+            <section>
+                <h2>Section 4</h2>
+                <p>Qui veri tantas bonorum in, eum id solet postea, usu no laudem iudicabit. Sea summo pertinacia vituperatoribus eu, detraxit disputando has eu. Soluta euripidis contentiones et ius. Iusto decore civibus vel ea, mea idque soleat suscipit an. Putent accusata ei his, est facete cetero alterum ex.</p>
+            </section>
+
+            <section>
+                <h2>Section 5</h2>
+                <p>Duo in vide cibo populo, cum an oratio eleifend platonem. Est alterum eleifend in, tale dicit et sit. Cum periculis ocurreret deseruisse ut. An qui clita feugait tacimates. Sit cu labores lobortis. At facer iuvaret comprehensam mel, no essent habemus inciderint cum, autem fuisset vis ne.</p>
+            </section>
+
+            <section>
+                <h2>Section 6</h2>
+                <p>Dictas graecis singulis ex vim. Ad libris audiam per, eam te justo erroribus, te his congue mucius. Vix splendide expetendis moderatius ne, vis id dicta error blandit. An mei alii euripidis scriptorem. Vel eu prompta salutatus definitiones. Ut mei etiam interpretaris.</p>
+            </section>
+
+            <section>
+                <h2>Section 7</h2>
+                <p>An eam percipitur mediocritatem, omnes tempor malorum ea vel. Te tota saperet concludaturque sit, eros dolore gubergren mel ex. Maiorum explicari consulatu et ius, per ne timeam liberavisse. Pri posidonium omittantur et, diam luptatum pri ea. Ea prima theophrastus mei, vitae rationibus te ius.</p>
+            </section>
+
+            <section>
+                <h2>Section 8</h2>
+                <p>No his dolorum imperdiet, has ea ferri adipisci omittantur. Sed ei laoreet recteque assueverit. Praesent maiestatis eam et, pro augue veritus reprimique cu. Id sea dicat alienum qualisque. Ad eum quaerendum vituperatoribus. Solet patrioque et eos, ut fugit graece est.
+            </section>
+            <section>
+                <h2>Section 9</h2>
+                <p>Quas alterum tacimates sit no, ad natum idque est. Mel no nihil denique mediocrem, his elitr euismod volutpat in, petentium salutandi philosophia pri ne. Ne graecis hendrerit sed. Saperet mediocrem consequat his te, te verterem singulis sensibus duo.</p>
+            </section>
+
+            <section>
+                <h2>Section 10</h2>
+                <p>Mel ut molestie assentior. Ea facer volumus pericula est, in feugiat dissentiunt cum, ne mea malis facete. Vim et malis quaerendum, mollis consequuntur per ea, mei nostro pericula maluisset in. Eu gubergren adversarium definitionem sit, eum at inermis noluisse expetendis, mei ex tale soleat detracto.</p>
+            </section>
+
+        </main>
+        <footer>
+            <small>&copy; 2025 healthy-tiger</small>
+        </footer>
+        <script>
+        const mainElm = document.querySelector('body > main');
+        const menuElm = document.querySelector('#toc-menu > ul');
+        const sections = mainElm.querySelectorAll('section');
+
+        let seckey = 0;
+
+        const onMenuItemClicked = (evt) => {
+            const seckey = evt.currentTarget.dataset['sectionkey']
+            console.log(seckey);
+            mainElm.querySelector(`[data-sectionkey="${seckey}"]`)?.scrollIntoView({block: 'start', inline: 'nearest', behavior:'smooth'});
+        }
+
+        // メニューの生成
+        sections.forEach(elm => {
+            // メニュー項目の生成
+            const menuItem = document.createElement('li');
+            menuItem.innerText = elm.querySelector('h2').innerText;
+            menuItem.addEventListener('click', onMenuItemClicked);
+
+            // メニュー項目とIntersectionObserverで監視する要素に同じdata属性を付加して紐付けする。
+            menuItem.dataset['sectionkey'] = seckey;
+            elm.dataset['sectionkey'] = seckey;
+
+            menuElm.appendChild(menuItem);
+            seckey++;
+        });
+
+        const options = {
+            root: document.querySelector('body > main'),
+        };
+        const intersectHandler = (entries) => {
+            entries.forEach(entry => {
+                const seckey = entry.target.dataset['sectionkey'];
+                if(seckey) {
+                    const menuItem = menuElm.querySelector(`li[data-sectionkey="${seckey}"]`);
+                    if(entry.isIntersecting) {
+                        menuItem.classList.add('active');
+                    } else {
+                        menuItem.classList.remove('active');
+                    }
+                }
+                console.log({isIntersecting: entry.isIntersecting, title: entry.target.querySelector('h2').innerText});
+            });
+        }
+        const observer = new IntersectionObserver(intersectHandler, options);
+        sections.forEach(elm => {
+            observer.observe(elm);
+        });
+        </script>
+    </body>
+</html>
